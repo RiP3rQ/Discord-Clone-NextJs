@@ -25,7 +25,7 @@ export const ServerSection = ({
   const { onOpen } = useModal();
 
   return (
-    <div className="flex items-center justify-between py-2">
+    <div className="flex items-center justify-between py-2 mr-[7px]">
       <p className="text-xs uppercase font-semibold text-zinc-500 dark:text-zinc-400">
         {label}
       </p>
