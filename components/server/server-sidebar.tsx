@@ -121,6 +121,7 @@ export const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
                   id: member.id,
                   name: member.profile.name,
                   icon: roleIconMap[member.role],
+                  email: member.profile.email,
                 })),
               },
             ]}

@@ -22,6 +22,7 @@ interface ServerSearchProps {
           icon: React.ReactNode;
           name: string;
           id: string;
+          email?: string;
         }[]
       | undefined;
   }[];
@@ -36,6 +37,8 @@ export const ServerSearch = ({ data }: ServerSearchProps) => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
+        console.log("open");
+
         setOpen((open) => !open);
       }
     };
@@ -73,7 +76,7 @@ export const ServerSearch = ({ data }: ServerSearchProps) => {
           Search
         </p>
         <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground ml-auto">
-          <span className="text-xs">⌘</span>K
+          <span className="text-xs">ctrl </span>+ k
         </kbd>
       </button>
       <CommandDialog open={open} onOpenChange={setOpen}>
@@ -85,14 +88,14 @@ export const ServerSearch = ({ data }: ServerSearchProps) => {
 
             return (
               <CommandGroup key={label} heading={label}>
-                {data?.map(({ id, icon, name }) => {
+                {data?.map(({ id, icon, name, email }) => {
                   return (
                     <CommandItem
                       key={id}
                       onSelect={() => onClick({ id, type })}
                     >
                       {icon}
-                      <span>{name}</span>
+                      <span>{name !== "null null" ? name : email}</span>
                     </CommandItem>
                   );
                 })}
