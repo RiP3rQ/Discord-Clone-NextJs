@@ -9,6 +9,7 @@ import { ChatVideoButton } from "./chat-video-button";
 interface ChatHeaderProps {
   serverId: string;
   name: string;
+  email?: string;
   type: "channel" | "conversation";
   imageUrl?: string;
 }
@@ -16,6 +17,7 @@ interface ChatHeaderProps {
 export const ChatHeader = ({
   serverId,
   name,
+  email,
   type,
   imageUrl,
 }: ChatHeaderProps) => {
@@ -28,7 +30,9 @@ export const ChatHeader = ({
       {type === "conversation" && (
         <UserAvatar src={imageUrl} className="h-8 w-8 md:h-8 md:w-8 mr-2" />
       )}
-      <p className="font-semibold text-md text-black dark:text-white">{name}</p>
+      <p className="font-semibold text-md text-black dark:text-white">
+        {name === "null null" ? email : name}
+      </p>
       <div className="ml-auto flex items-center">
         {type === "conversation" && <ChatVideoButton />}
         <SocketIndicator />

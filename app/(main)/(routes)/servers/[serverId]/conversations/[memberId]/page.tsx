@@ -59,6 +59,7 @@ const MemberIdPage = async ({ params, searchParams }: MemberIdPageProps) => {
       <ChatHeader
         imageUrl={otherMember.profile.imageUrl}
         name={otherMember.profile.name}
+        email={otherMember.profile.email}
         serverId={params.serverId}
         type="conversation"
       />
@@ -70,6 +71,7 @@ const MemberIdPage = async ({ params, searchParams }: MemberIdPageProps) => {
           <ChatMessages
             member={currentMember}
             name={otherMember.profile.name}
+            email={otherMember.profile.email}
             chatId={conversation.id}
             type="conversation"
             apiUrl="/api/direct-messages"
