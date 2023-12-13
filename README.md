@@ -1,6 +1,12 @@
 
 # Discord Clone 👾
 
+# App based on the tutorial off CodeWithAntonio
+
+Youtube: https://www.youtube.com/@codewithantonio
+
+Tutorial: https://youtu.be/ZbX4Ok9YX94?si=-bhD-OD0ocicHohv
+
 ## Tech stack
 
 - **React**
